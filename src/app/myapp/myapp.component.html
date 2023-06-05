@@ -1,0 +1,25 @@
+<p>myapp works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let student of studentList">
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.yourname }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.gender }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.message }}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

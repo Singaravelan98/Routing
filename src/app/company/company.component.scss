@@ -1,0 +1,34 @@
+$table-background-color: #ebcece;
+$table-header-background-color: #86efe6;
+$table-row-hover-background-color:white;
+$table-row-selected-background-color: #6ec4f9;
+
+$table-padding: 10px;
+$table-border-color: #121111;
+$table-font-weight: bold;
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: $table-background-color;
+  
+  th, td {
+    padding: $table-padding;
+    text-align: left;
+    border: 1px solid $table-border-color;
+  }
+  
+  th {
+    background-color: $table-header-background-color;
+    font-weight: $table-font-weight;
+  }
+  
+  tr:hover {
+    background-color: $table-row-hover-background-color;
+    cursor: pointer;
+  }
+  
+  tr.selected {
+    background-color: $table-row-selected-background-color;
+  }
+}

@@ -1,0 +1,75 @@
+<p>employee works!</p>
+
+<div class="container">
+    <div class="bg">
+        <div class="mb-3">
+            <label for="yourname">YourName</label>
+            <input type="text" class="form-control" id="yourname" name="yourname" placeholder="Enter your name"
+                [(ngModel)]="yourname" (input)="updateSubmitButtonState()" />
+        </div>
+
+        <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email"
+                [(ngModel)]="email" (input)="updateSubmitButtonState()" />
+        </div>
+
+        <div class="mb-3">
+            <label for="email">Gender</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" name="gender"
+                [(ngModel)]="gender" (input)="updateSubmitButtonState()" />
+        </div>
+
+        <div class="mb-3">
+            <label for="email">Age</label>
+            <input type="number" class="form-control" id="email" placeholder="Enter your email" name="age"
+                [(ngModel)]="age" (input)="updateSubmitButtonState()" />
+        </div>
+
+        <div class="mb-3">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" rows="3" name="message" [(ngModel)]="message"
+                (input)="updateSubmitButtonState()"></textarea>
+        </div>
+
+        <div class="icon3">
+            <button type="button" class="btn btn-primary" [disabled]="isSubmitDisabled "
+                (click)="createuser()">Submit</button>
+        </div>
+        <div class="icon3">
+            <button type="button" class="btn btn-primary" (click)="  updateuser()">Update</button>
+        </div>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Message</th>
+            <th>Action</th> <!-- New column for buttons -->
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let s of employeeList">
+            <tr>
+                <!-- (click)="list(s.id)" -->
+                <td>{{ s.id }}</td>
+                <td>{{ s.yourname }}</td>
+                <td>{{ s.email }}</td>
+                <td>{{ s.gender }}</td>
+                <td>{{ s.age }}</td>
+                <td>{{ s.message }}</td>
+                <td>
+                    <button (click)="list(s.id)">preview</button>
+                    <button (click)="edituser(s.id)">Edit</button> <!-- Edit button -->
+                    <button (click)="getdele(s.id)">Delete</button> <!-- Delete button -->
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

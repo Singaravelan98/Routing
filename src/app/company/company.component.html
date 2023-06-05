@@ -1,0 +1,21 @@
+<p>company works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>CompanyName</th>
+            <th>CompanyEmail</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let c of   companyList">
+            <tr (click)="comlist(c.id)">
+                <td>{{ c.id }}</td>
+                <td>{{ c.companyname }}</td>
+                <td>{{ c.companyemail }}</td>
+                <td>{{ c.message }}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
